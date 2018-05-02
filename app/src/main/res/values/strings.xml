@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">TABUNGANKU</string>
+
+    /** All About Button **/
+    <string name="btn_1">LOGIN</string>
+    <string name="btn_reg">REGISTRATION</string>
+    <string name="btn_forgot_pass">SUBMIT</string>
+
+    /** All About Title **/
+    <string name="title_login">TABUNGANKU</string>
+    <string name="title_register">REGISTRATION</string>
+    <string name="title_forgot_pass">FORGOT PASSWORD</string>
+    <string name="title_lgn">LOGIN</string>
+
+    /** All About Content **/
+    <string name="cont_forgot_pass">Enter Your Email Below for Reset Password</string>
+    <string name="title_activity_gokil">GokilActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_gokil2">Gokil2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+</resources>
