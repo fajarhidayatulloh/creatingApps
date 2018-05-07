@@ -25,4 +25,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string name="app_login_double_back">Double click for exit!</string>
+    <string name="toast_login_fill">no found user</string>
 </resources>
