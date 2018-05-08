@@ -2,14 +2,13 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinatorForgotPassword"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.MainActivity">
+    tools:context=".view.ui.PemasukanActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <android.support.v7.widget.Toolbar
@@ -23,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TABUNGANKU"
+                android:text="@string/title_pemasukan"
                 android:id="@+id/toolbar_main_text"
                 android:textAlignment="center"
                 android:paddingLeft="-10dp"
@@ -35,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="@string/title_home_tabungan"
+            android:text="@string/total_pemasukan"
             android:textSize="20dp"
             android:textAlignment="center"/>
 
@@ -48,6 +47,10 @@
             android:textSize="30dp"
             android:textStyle="bold"
             android:textAlignment="center"/>
+
+        <TableRow>
+
+        </TableRow>
 
 
         <View
@@ -68,6 +71,5 @@
             app:menu="@menu/navigation" />
 
     </LinearLayout>
-
 
 </android.support.design.widget.CoordinatorLayout>

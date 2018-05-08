@@ -11,13 +11,17 @@
     <string name="title_register">REGISTRATION</string>
     <string name="title_forgot_pass">FORGOT PASSWORD</string>
     <string name="title_lgn">LOGIN</string>
+    <string name="title_home_tabungan">Sisa Tabungan Anda:</string>
+    <string name="value_of_tabungan">Rp. 1,000,000</string>
+    <string name="total_pemasukan">Total Pemasukan Anda:</string>
+    <string name="total_pengeluaran">Total Pengeluaran Anda:</string>
 
     /** All About Content **/
     <string name="cont_forgot_pass">Enter Your Email Below for Reset Password</string>
     <string name="title_activity_gokil">GokilActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_pemasukan">Pemasukan</string>
+    <string name="title_pengeluaran">Pengeluaran</string>
     <string name="title_activity_gokil2">Gokil2</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
