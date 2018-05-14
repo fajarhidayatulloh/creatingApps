@@ -9,6 +9,14 @@ import android.view.View
 import android.support.design.widget.BottomNavigationView
 import android.widget.Toast
 import com.example.dev.creatingapps.R
+import android.app.ProgressDialog
+import android.support.v7.widget.LinearLayoutManager
+import android.view.Menu
+import android.view.MenuItem
+import com.example.dev.creatingapps.presenter.interfaces.ServerCallback
+import com.example.dev.creatingapps.sys.util.SessionManager
+import com.example.dev.creatingapps.model.DataHome
+//import com.example.dev.creatingapps.presenter.implements.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
 

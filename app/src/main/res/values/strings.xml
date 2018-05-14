@@ -32,4 +32,25 @@
 
     <string name="app_login_double_back">Double click for exit!</string>
     <string name="toast_login_fill">no found user</string>
+
+    <string name="sharedAccount">sharedAccount</string>
+    <string name="accountSession">accountSession</string>
+    <string name="accountToken">accountToken</string>
+
+    <string name="progress_loading">Please Wait</string>
+    <string name="progress_login">Now login...</string>
+    <string name="progress_updata">Uploading...</string>
+    <string name="progress_getting">Getting Data...</string>
+
+    <string name="toast_login_failed">Login Failed!</string>
+    <string name="toast_login_failed_session">Failed Saving Session, Please Try Again!</string>
+    <string name="toast_login_connection">Please check connection!</string>
+    <string name="toast_upload_photo">Please fill correctly!</string>
+    <string name="toast_upload_photo_failed">Failed upload photo!</string>
+    <string name="toast_data_load_failed">Failed load data!</string>
+
+    <string name="dialog_warning">Warning!</string>
+    <string name="dialog_permission">Please give permission for Wifi Tester Monitor!</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
 </resources>
