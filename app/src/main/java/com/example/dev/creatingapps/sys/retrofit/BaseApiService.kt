@@ -13,4 +13,6 @@ interface BaseApiService {
     fun makeLogin(@Header("Content-Type") type: String,
                   @Body data: Login): Call<ResponseBody>
 
+    @GET(APIConfig.DATA)
+    fun getList(@Header("Access-Token") token: String): Call<ResponseBody>
 }

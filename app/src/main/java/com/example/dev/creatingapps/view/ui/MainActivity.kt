@@ -16,13 +16,19 @@ import android.view.MenuItem
 import com.example.dev.creatingapps.presenter.interfaces.ServerCallback
 import com.example.dev.creatingapps.sys.util.SessionManager
 import com.example.dev.creatingapps.model.DataHome
-//import com.example.dev.creatingapps.presenter.implements.MainPresenter
+import com.example.dev.creatingapps.presenter.implements.MainPresenter
+import com.example.dev.creatingapps.view.adapter.MainAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
     private var doubleBackToExitPressedOnce = false
+    private var adapter: MainAdapter? = null
+    private var layoutManager: LinearLayoutManager? = null
+    private var loading: ProgressDialog? = null
+
+    private val presenter = MainPresenter()
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -52,6 +58,8 @@ class MainActivity : AppCompatActivity() {
         val TitleBar = findViewById<View>(R.id.toolbar_main) as Toolbar
         setSupportActionBar(TitleBar)
 
+        loadData()
+
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
@@ -64,4 +72,43 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, getString(R.string.app_login_double_back), Toast.LENGTH_SHORT).show()
         Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
     }
+
+    private fun loadData() {
+        val sessionManager = SessionManager(this@MainActivity)
+        loading = ProgressDialog.show(this, getString(R.string.progress_loading),
+                getString(R.string.progress_getting), false, false)
+        presenter.getData(this, "Bearer " + sessionManager.accessToken, object : ServerCallback {
+            override fun onSuccess(response: String) {
+                hideDialog()
+                val arrayList = presenter.parsingData(response)
+                setAdapter(arrayList)
+            }
+
+            override fun onFailed(isFailed: String) {
+                hideDialog()
+                Toast.makeText(this@MainActivity, getString(R.string.toast_data_load_failed),
+                        Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onFailure(throwable: Throwable) {
+                hideDialog()
+                Toast.makeText(this@MainActivity, getString(R.string.toast_data_load_failed),
+                        Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun setAdapter(arraData: ArrayList<DataHome>) {
+        adapter = MainAdapter(this@MainActivity, arraData)
+        layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL,
+                false)
+        adapter!!.notifyDataSetChanged()
+    }
+
+
+    private fun hideDialog() {
+        if (loading!!.isShowing)
+            loading!!.dismiss()
+    }
+
 }
