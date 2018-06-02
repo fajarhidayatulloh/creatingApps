@@ -12,8 +12,7 @@
         android:orientation="vertical">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar_main"
-            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/toolbar_pemasukan"
             android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,15 +42,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/value_of_tabungan"
             android:textSize="30dp"
             android:textStyle="bold"
             android:textAlignment="center"/>
-
-        <TableRow>
-
-        </TableRow>
-
 
         <View
             android:layout_width="match_parent"

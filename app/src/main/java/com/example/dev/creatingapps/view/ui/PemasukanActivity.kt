@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.design.widget.BottomNavigationView
+import android.support.v7.widget.Toolbar
+import android.view.View
 import android.widget.Toast
 import com.example.dev.creatingapps.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,7 +20,7 @@ class PemasukanActivity : AppCompatActivity() {
             R.id.navigation_home -> {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                return@OnNavigationItemSelectedListener true
+                return@OnNavigationItemSelectedListener false
             }
             R.id.navigation_dashboard -> {
                 val intent = Intent(this, PemasukanActivity::class.java)
@@ -28,16 +30,17 @@ class PemasukanActivity : AppCompatActivity() {
             R.id.navigation_notifications -> {
                 val intent = Intent(this, PemasukanActivity::class.java)
                 startActivity(intent)
-                return@OnNavigationItemSelectedListener true
+                return@OnNavigationItemSelectedListener false
             }
         }
-        false
+        true
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pemasukan)
-
+        val TitleBar = findViewById<View>(R.id.toolbar_pemasukan) as Toolbar
+        setSupportActionBar(TitleBar)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 

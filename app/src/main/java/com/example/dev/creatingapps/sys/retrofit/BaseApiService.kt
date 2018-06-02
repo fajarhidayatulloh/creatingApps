@@ -14,5 +14,6 @@ interface BaseApiService {
                   @Body data: Login): Call<ResponseBody>
 
     @GET(APIConfig.DATA)
-    fun getList(@Header("Access-Token") token: String): Call<ResponseBody>
+    fun getList(@Header("Authorization") token: String): Call<ResponseBody>
+
 }

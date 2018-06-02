@@ -11,8 +11,7 @@
     <string name="title_register">REGISTRATION</string>
     <string name="title_forgot_pass">FORGOT PASSWORD</string>
     <string name="title_lgn">LOGIN</string>
-    <string name="title_home_tabungan">Sisa Tabungan Anda:</string>
-    <string name="value_of_tabungan">Rp. 1,000,000</string>
+    <string name="title_home_tabungan">Total Tabungan Anda:</string>
     <string name="total_pemasukan">Total Pemasukan Anda:</string>
     <string name="total_pengeluaran">Total Pengeluaran Anda:</string>
 
@@ -37,8 +36,8 @@
     <string name="accountSession">accountSession</string>
     <string name="accountToken">accountToken</string>
 
-    <string name="progress_loading">Please Wait</string>
-    <string name="progress_login">Now login...</string>
+    <string name="progress_loading">Mohon Menunggu</string>
+    <string name="progress_login">login proses...</string>
     <string name="progress_updata">Uploading...</string>
     <string name="progress_getting">Getting Data...</string>
 
@@ -53,4 +52,9 @@
     <string name="dialog_permission">Please give permission for Wifi Tester Monitor!</string>
     <string name="dialog_yes">Yes</string>
     <string name="dialog_no">No</string>
+
+    <string name="wejangan">Notes: Tingkatkan Tabunganmu, Kurangi Pengeluaranmu, dan Tambahkan Pemasukanmu.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

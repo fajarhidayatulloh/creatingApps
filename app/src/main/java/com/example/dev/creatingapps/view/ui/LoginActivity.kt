@@ -47,9 +47,9 @@ class LoginActivity : AppCompatActivity() {
         }
 
         buttonLogin.setOnClickListener {
-            grant_type = "bareksa_password"
-            client_id = "4"
-            client_secret = "jCbTlxE2XrT56IG7KWQvz1H2k3xfRYDxFNN4kkdm"
+            grant_type = "tabunganku_password"
+            client_id = "7"
+            client_secret = "aqk6gSivAJV6hlJKeNrNTtQ7v6i3JWuNMD9JhFZa"
             username = editTextLoginEmail.text.toString()
             password = editTextLoginPassword.text.toString().trim { it <= ' ' }
             scope = "*"

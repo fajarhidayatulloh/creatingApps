@@ -14,7 +14,6 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar_main"
-            android:minHeight="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,6 +36,7 @@
             android:layout_marginTop="30dp"
             android:text="@string/title_home_tabungan"
             android:textSize="20dp"
+            android:textStyle="bold"
             android:textAlignment="center"/>
 
         <TextView
@@ -44,11 +44,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/value_of_tabungan"
             android:textSize="30dp"
             android:textStyle="bold"
+            android:textColor="#000000"
             android:textAlignment="center"/>
 
+        <TextView
+            android:id="@+id/wejangan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:textSize="12dp"
+            android:textAlignment="center"
+            android:text="@string/wejangan"/>
 
         <View
             android:layout_width="match_parent"

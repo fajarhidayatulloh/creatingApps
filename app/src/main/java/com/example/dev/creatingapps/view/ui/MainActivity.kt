@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.dev.creatingapps.R
 import android.app.ProgressDialog
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.example.dev.creatingapps.presenter.interfaces.ServerCallback
@@ -58,30 +59,16 @@ class MainActivity : AppCompatActivity() {
         val TitleBar = findViewById<View>(R.id.toolbar_main) as Toolbar
         setSupportActionBar(TitleBar)
 
-        loadData()
+        value_of_tabungan.isEnabled = false
 
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-    }
-
-    override fun onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            finish()
-            return
-        }
-        this.doubleBackToExitPressedOnce = true
-        Toast.makeText(this, getString(R.string.app_login_double_back), Toast.LENGTH_SHORT).show()
-        Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
-    }
-
-    private fun loadData() {
         val sessionManager = SessionManager(this@MainActivity)
         loading = ProgressDialog.show(this, getString(R.string.progress_loading),
                 getString(R.string.progress_getting), false, false)
-        presenter.getData(this, "Bearer " + sessionManager.accessToken, object : ServerCallback {
+        presenter.getData(this@MainActivity, "Bearer " + sessionManager.accessToken, object : ServerCallback {
             override fun onSuccess(response: String) {
                 hideDialog()
-                val arrayList = presenter.parsingData(response)
-                setAdapter(arrayList)
+                val data = presenter.parsingData(response)
+                value_of_tabungan.text = data.currency + ". " + data.totalTabungan
             }
 
             override fun onFailed(isFailed: String) {
@@ -96,15 +83,19 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
             }
         })
+
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
-    private fun setAdapter(arraData: ArrayList<DataHome>) {
-        adapter = MainAdapter(this@MainActivity, arraData)
-        layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL,
-                false)
-        adapter!!.notifyDataSetChanged()
+    override fun onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            finish()
+            return
+        }
+        this.doubleBackToExitPressedOnce = true
+        Toast.makeText(this, getString(R.string.app_login_double_back), Toast.LENGTH_SHORT).show()
+        Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
     }
-
 
     private fun hideDialog() {
         if (loading!!.isShowing)
